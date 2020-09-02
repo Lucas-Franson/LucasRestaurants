@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">LucasRestaurants</string>
+    <string name="app_name">Luca\'s Restaurants</string>
+    <string name="btnRegistrar">REGISTRAR PEDIDO</string>
+    <string name="btnConsulta">CONSULTAR HORAS</string>
 </resources>
