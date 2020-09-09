@@ -2,6 +2,7 @@ package com.example.lucasrestaurants;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -33,5 +34,14 @@ public class RestaurantActivity extends AppCompatActivity {
 
         //Altera o texto do objeto text da atividade
         consulta.setText("Total de Horas");
+    }
+
+    //Método para evento click do botão de enviar mensagem
+    public void onClickBtnEnviarMensagem(View view) {
+        //Obtem uma nova activity
+        Intent intencao = new Intent(this, MensagemActivity.class);
+
+        //Inicia essa nova activity no projeto
+        startActivity(intencao);
     }
 }

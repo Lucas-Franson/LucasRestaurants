@@ -40,4 +40,11 @@
         android:text="@string/btnConsulta"
         android:onClick="onClickBtnConsultar"/>
 
+    <Button
+        android:id="@+id/btnEnviarMensagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar Mensagem"
+        android:onClick="onClickBtnEnviarMensagem"/>
+
 </LinearLayout>
