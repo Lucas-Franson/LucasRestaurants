@@ -29,11 +29,11 @@ public class RestaurantActivity extends AppCompatActivity {
 
     //Método para evento click do botão de consultar
     public void onClickBtnConsultar(View view) {
-        //Obtem o objeto text da atividade
-        TextView consulta = findViewById(R.id.vazio);
+        //Obtem uma nova activity
+        Intent intencao = new Intent(this, CronometroActivity.class);
 
-        //Altera o texto do objeto text da atividade
-        consulta.setText("Total de Horas");
+        //Inicia essa nova activity no projeto
+        startActivity(intencao);
     }
 
     //Método para evento click do botão de enviar mensagem
