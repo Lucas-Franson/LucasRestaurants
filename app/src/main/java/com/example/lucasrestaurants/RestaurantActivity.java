@@ -44,4 +44,22 @@ public class RestaurantActivity extends AppCompatActivity {
         //Inicia essa nova activity no projeto
         startActivity(intencao);
     }
+
+    public void onClickCadastrarEmail(View view){
+        /*Aqui inserimos o código que será utilizado quando o botão para cadastrar
+         * email da atividade for clicado*/
+        Intent intencao = new Intent(this, CriarEmailActivity.class);
+
+        startActivity(intencao);
+
+    }
+
+    public void onClickNovo(View view){
+        /*Aqui inserimos o código que será utilizado quando o botão para cadastrar
+         * novo produto da atividade for clicado*/
+        Intent intencao = new Intent(this, NovoProdutoActivity.class);
+
+        startActivity(intencao);
+
+    }
 }
