@@ -1,62 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestaurantActivity"
-    android:orientation="vertical">
+    tools:context=".RestaurantActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_cabecalho"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></include>
+
+    <!--Aqui é um exemplo de um layout inserido em outro. Temos que tomar cuidado com
+    a largura e altura dos layouts internos, pois senão eles podem ocupar a tela e
+    então somente um será exibido-->
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:text="Estoque"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 
-    <!--Aqui é um exemplo de um layout inserido em outro. Temos que tomar cuidado com
-    a largura e altura dos layouts internos, pois senão eles podem ocupar a tela e
-    então somente um será exibido-->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerBtns"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="81dp"
         android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <Button
             android:id="@+id/btnNovo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onClickNovo"
             android:text="@string/novo_produto"
-            android:onClick="onClickNovo"/>
+            app:layout_constraintEnd_toStartOf="@+id/btnAtualizar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btnAtualizar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="onClickNovo"
             android:text="@string/atualizar_produto"
-            android:onClick="onClickNovo"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnNovo"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/btnCriarEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="96dp"
+        android:onClick="onClickCadastrarEmail"
         android:text="@string/preencher_email"
-        android:onClick="onClickCadastrarEmail" />
-
-    <TextView
-        android:id="@+id/tituloApp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:text="@string/app_name" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/containerBtns" />
 
     <TextView
         android:id="@+id/vazio"
@@ -64,30 +87,44 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:text="" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistrar"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCriarEmail" />
 
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="onClickBtnRegistrar"
         android:text="@string/btnRegistrar"
-        android:layout_margin="11dp"
-        android:onClick="onClickBtnRegistrar" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/vazio" />
 
     <Button
         android:id="@+id/btnConsulta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="11dp"
+        android:layout_marginTop="50dp"
+        android:onClick="onClickBtnConsultar"
         android:text="@string/btnConsulta"
-        android:onClick="onClickBtnConsultar"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnRegistrar" />
 
     <Button
         android:id="@+id/btnEnviarMensagem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="11dp"
+        android:layout_marginTop="50dp"
+        android:onClick="onClickBtnEnviarMensagem"
         android:text="Enviar Mensagem"
-        android:onClick="onClickBtnEnviarMensagem"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnConsulta" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

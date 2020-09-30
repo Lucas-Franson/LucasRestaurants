@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CriarEmailActivity"></activity>
+        <activity android:name=".Cabecalho"></activity>
+        <activity android:name=".CriarEmailActivity" />
         <activity android:name=".ExibirProdutoActivity" />
         <activity android:name=".NovoProdutoActivity" />
         <activity android:name=".CronometroActivity" />
